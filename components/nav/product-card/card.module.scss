@@ -1,0 +1,11 @@
+.main {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	.item_img {
+		width: 40vw;
+		flex: 0 1 400px;
+		margin: 10px;
+	}
+}
