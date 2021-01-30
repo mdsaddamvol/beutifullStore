@@ -1,32 +1,10 @@
 import styles from "./card.module.scss";
-const Card = (img) => (
+const Card = (imgurl, name, discription, price) => (
 	<div className={styles.main}>
-		<img
-			src='/static/phone.jpg'
-			alt='shop item pic'
-			className={styles.item_img}
-		/>
-		<img
-			src='/static/shoe.jpg'
-			alt='shop item pic'
-			className={styles.item_img}
-		/>
-
-		<img
-			src='/static/hat.jpg'
-			alt='shop item pic'
-			className={styles.item_img}
-		/>
-		<img
-			src='/static/glsess.jpg'
-			alt='shop item pic'
-			className={styles.item_img}
-		/>
-		<img
-			src='/static/laptop.jpg'
-			alt='shop item pic'
-			className={styles.item_img}
-		/>
+		<img src={imgurl} alt='shop item pic' className={styles.item_img} />
+		<h2>Name:{name}</h2>
+		<p>Discription:{discription}</p>
+		<p>pPrice:${price} </p>
 	</div>
 );
 
