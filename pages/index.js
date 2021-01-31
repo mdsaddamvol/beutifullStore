@@ -2,10 +2,11 @@ import { useEffect } from "react";
 import styles from "../styles/Home.module.scss";
 import Nav from "../components/nav/nav";
 import Card from "../components/nav/product-card/card.js";
-import { setProducts } from "../redax/products/actions";
+import { setProducts, setProduct } from "../redax/products/actions";
 import { connect } from "react-redux";
+import Link from "next/link";
 
-const Home = ({ products, setProducts }) => {
+const Home = ({ products, setProducts, setProduct }) => {
 	useEffect(() => {
 		fetch("http://localhost:3000/api/products", {
 			method: "GET",
@@ -13,13 +14,20 @@ const Home = ({ products, setProducts }) => {
 			.then((res) => res.json())
 			.then((dat) => setProducts(dat.data));
 	}, []);
+
 	return (
 		<div className={styles.main}>
 			<Nav />
 			<div className={styles.cards}>
 				{products &&
 					products.map((product) => {
-						return <Card key={product._id} {...product} />;
+						return (
+							<Link href={`/product/${product._id}`}>
+								<a>
+									<Card key={product._id} {...product} />
+								</a>
+							</Link>
+						);
 					})}
 			</div>
 		</div>
@@ -27,7 +35,7 @@ const Home = ({ products, setProducts }) => {
 };
 const mapStateToProps = (state) => {
 	return {
-		products: state.products.products,
+		products: state.productsState.products,
 	};
 };
 const mapDispatchToProps = (dispatch) => {

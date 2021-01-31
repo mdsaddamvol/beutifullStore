@@ -2,11 +2,11 @@ import { useMemo } from "react";
 import { createStore, applyMiddleware } from "redux";
 import thunkMiddleware from "redux-thunk";
 import reducers from "./reducers";
-
+import logger from "redux-logger";
 let store;
-
+const middlewares = [logger, thunkMiddleware];
 function initStore(initialState) {
-	return createStore(reducers, initialState, applyMiddleware(thunkMiddleware));
+	return createStore(reducers, initialState, applyMiddleware(...middlewares));
 }
 
 export const initializeStore = (preloadedState) => {
