@@ -1,22 +1,41 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "../styles/Home.module.scss";
 import Nav from "../components/nav/nav";
-import Card from "../components/nav/product-card/card";
+import Card from "../components/nav/product-card/card.js";
+import { setProducts } from "../redax/products/actions";
+import { connect } from "react-redux";
 
-export default function Home() {
-	const [data, setData] = useState([]);
+const Home = ({ products, setProducts }) => {
 	useEffect(() => {
 		fetch("http://localhost:3000/api/products", {
 			method: "GET",
 		})
 			.then((res) => res.json())
-			.then((data) => setData(data.data));
+			.then((dat) => setProducts(dat.data));
 	}, []);
 	return (
 		<div className={styles.main}>
 			<Nav />
-			<pre>{JSON.stringify(data, null, 4)}</pre>
-			<Card />
+			<div className={styles.cards}>
+				{products &&
+					products.map((product) => {
+						return <Card key={product._id} {...product} />;
+					})}
+			</div>
 		</div>
 	);
-}
+};
+const mapStateToProps = (state) => {
+	return {
+		products: state.products.products,
+	};
+};
+const mapDispatchToProps = (dispatch) => {
+	return {
+		setProducts: (items) => {
+			dispatch(setProducts(items));
+		},
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

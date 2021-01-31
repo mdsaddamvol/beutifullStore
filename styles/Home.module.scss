@@ -1,0 +1,9 @@
+.cards {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	.main {
+		flex: 1 0 360px;
+	}
+}

@@ -1,11 +1,10 @@
 .main {
-	width: 100%;
+	width: 40vw;
 	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	.item_img {
-		width: 40vw;
-		flex: 0 1 400px;
-		margin: 10px;
-	}
+	justify-content: center;
+	flex-direction: column;
+	border: 1px solid green;
+	border-radius: 8px;
+	padding: 5px;
+	margin: 20px;
 }
