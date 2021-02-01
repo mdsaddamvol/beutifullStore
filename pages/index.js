@@ -4,7 +4,7 @@ import Nav from "../components/nav/nav";
 import Card from "../components/nav/product-card/card.js";
 import { setProducts } from "../redax/products/actions";
 import { connect } from "react-redux";
-const uri= process.browser? :
+
 const Home = ({ products, setProducts }) => {
 	useEffect(() => {
 		fetch("https://mztech-test-store/api/products", {
