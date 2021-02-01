@@ -1,17 +1,25 @@
 .main {
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
-	flex-grow: wrap;
+	justify-content: center;
+	flex-wrap: wrap;
 	padding: 20px;
-	img {
-		width: 100%;
-		border: 1px solid green;
-	}
-	.info {
-		padding: 20px;
-	}
+
 	.imgContainer {
 		flex: 1 0 335px;
+		border: 1px solid green;
+
+		img {
+			width: 100%;
+		}
+	}
+	.info {
+		flex: 1 0 335px;
+		text-align: justify;
+		h2,
+		h3,
+		p {
+			width: 100%;
+		}
 	}
 }
