@@ -18,7 +18,7 @@ function Product({ product }) {
 
 export async function getServerSideProps({ params }) {
 	const res = await fetch(
-		`https://mztech-test-store/api/product/${params.id}`,
+		`https://mztech-test-store.herokuapp.com/api/product/${params.id}`,
 		{
 			method: "GET",
 		}

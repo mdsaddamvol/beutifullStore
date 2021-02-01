@@ -13,16 +13,19 @@ const Login = ({ setUserLogedIn }) => {
 	const router = useRouter();
 	const handlelogin = async (e) => {
 		e.preventDefault();
-		const user = await fetch("http://localhost:3000/api/login", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json;charset=utf-8",
-			},
-			body: JSON.stringify({
-				email,
-				pass,
-			}),
-		}).then((res) => res.json());
+		const user = await fetch(
+			"https://mztech-test-store.herokuapp.com/api/login",
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json;charset=utf-8",
+				},
+				body: JSON.stringify({
+					email,
+					pass,
+				}),
+			}
+		).then((res) => res.json());
 
 		if (user.data._id) {
 			setUserLogedIn(user.data);
@@ -31,17 +34,20 @@ const Login = ({ setUserLogedIn }) => {
 	};
 	const handlesignUp = async (e) => {
 		e.preventDefault();
-		const user = await fetch("https://mztech-test-store/api/signup", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				name,
-				email,
-				pass,
-			}),
-		}).then((res) => res.json());
+		const user = await fetch(
+			"https://mztech-test-store.herokuapp.com/api/signup",
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					name,
+					email,
+					pass,
+				}),
+			}
+		).then((res) => res.json());
 		if (user.data._id) {
 			setUserLogedIn(user.data);
 			router.push("/");

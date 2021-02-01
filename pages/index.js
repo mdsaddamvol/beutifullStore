@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 
 const Home = ({ products, setProducts }) => {
 	useEffect(() => {
-		fetch("https://mztech-test-store/api/products", {
+		fetch("https://mztech-test-store.herokuapp.com/api/products", {
 			method: "GET",
 		})
 			.then((res) => res.json())
