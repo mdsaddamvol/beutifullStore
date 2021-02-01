@@ -17,9 +17,12 @@ function Product({ product }) {
 }
 
 export async function getServerSideProps({ params }) {
-	const res = await fetch(`http://localhost:3000/api/product/${params.id}`, {
-		method: "GET",
-	});
+	const res = await fetch(
+		`https://mztech-test-store/api/product/${params.id}`,
+		{
+			method: "GET",
+		}
+	);
 	const product = await res.json();
 
 	return {

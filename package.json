@@ -1,11 +1,12 @@
 {
-  "name": "ecomrace-test",
+  "name": "mztech-test-store",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "heroku-postbuild": "npm run build",
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",

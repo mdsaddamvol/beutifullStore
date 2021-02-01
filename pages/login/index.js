@@ -31,7 +31,7 @@ const Login = ({ setUserLogedIn }) => {
 	};
 	const handlesignUp = async (e) => {
 		e.preventDefault();
-		const user = await fetch("http://localhost:3000/api/signup", {
+		const user = await fetch("https://mztech-test-store/api/signup", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

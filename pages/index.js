@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import styles from "../styles/Home.module.scss";
 import Nav from "../components/nav/nav";
 import Card from "../components/nav/product-card/card.js";
-import { setProducts, setProduct } from "../redax/products/actions";
+import { setProducts } from "../redax/products/actions";
 import { connect } from "react-redux";
-
-const Home = ({ products, setProducts, setProduct }) => {
+const uri= process.browser? :
+const Home = ({ products, setProducts }) => {
 	useEffect(() => {
-		fetch("http://localhost:3000/api/products", {
+		fetch("https://mztech-test-store/api/products", {
 			method: "GET",
 		})
 			.then((res) => res.json())
