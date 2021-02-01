@@ -5,7 +5,10 @@ function Product({ product }) {
 		<>
 			<Nav />
 			<div className={styles.main}>
-				<img src={product.data.imgurl} alt='item' />
+				<div className={styles.imgContiner}>
+					<img src={product.data.imgurl} alt='item' />
+				</div>
+
 				<div className={styles.info}>
 					<h2>NAME: {product.data.name.toUpperCase()}</h2>
 					<p>DISCRIPTION: {product.data.discription}</p>
