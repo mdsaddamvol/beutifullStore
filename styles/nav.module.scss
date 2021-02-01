@@ -5,8 +5,10 @@
 	background-color: bisque;
 	align-items: center;
 	height: 10vh;
-	a {
+	h3 {
 		flex: 0 1 100px;
 		padding: 5px;
+		margin-right: 20px;
+		cursor: pointer;
 	}
 }

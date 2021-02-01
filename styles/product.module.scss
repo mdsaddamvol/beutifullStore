@@ -1,0 +1,14 @@
+.main {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-grow: wrap;
+	padding: 20px;
+	img {
+		width: 40vw;
+		border: 1px solid green;
+	}
+	.info {
+		padding: 20px;
+	}
+}

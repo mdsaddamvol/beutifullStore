@@ -1,12 +1,18 @@
 import styles from "./card.module.scss";
+import Link from "next/link";
 
 const Card = ({ _id, name, discription, price, imgurl }) => {
 	return (
 		<div className={styles.main}>
-			<img src={imgurl} alt='shop item pic' className={styles.item_img} />
-			<h2>{name.toUpperCase()}</h2>
-			<p>{discription}</p>
-			<p>{price}</p>
+			<Link href={`/product/${_id}`}>
+				<a>
+					<img src={imgurl} alt='shop item pic' className={styles.item_img} />
+					<div className={styles.info}>
+						<h2>{name.toUpperCase()}</h2>
+						<h3>${price}</h3>
+					</div>{" "}
+				</a>
+			</Link>
 		</div>
 	);
 };

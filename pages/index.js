@@ -4,7 +4,6 @@ import Nav from "../components/nav/nav";
 import Card from "../components/nav/product-card/card.js";
 import { setProducts, setProduct } from "../redax/products/actions";
 import { connect } from "react-redux";
-import Link from "next/link";
 
 const Home = ({ products, setProducts, setProduct }) => {
 	useEffect(() => {
@@ -21,13 +20,7 @@ const Home = ({ products, setProducts, setProduct }) => {
 			<div className={styles.cards}>
 				{products &&
 					products.map((product) => {
-						return (
-							<Link href={`/product/${product._id}`}>
-								<a>
-									<Card key={product._id} {...product} />
-								</a>
-							</Link>
-						);
+						return <Card key={product._id} {...product} />;
 					})}
 			</div>
 		</div>
