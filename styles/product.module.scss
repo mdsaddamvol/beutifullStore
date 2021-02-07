@@ -8,14 +8,17 @@
 	.imgContainer {
 		flex: 1 0 335px;
 		border: 1px solid green;
+		border-radius: 8px;
 
 		img {
 			width: 100%;
+			border-radius: 8px;
 		}
 	}
 	.info {
 		flex: 1 0 335px;
 		text-align: justify;
+		padding: 10px;
 		h2,
 		h3,
 		p {
